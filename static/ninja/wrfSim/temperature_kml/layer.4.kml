@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<GroundOverlay>
+<name>layer</name>
+<Icon>
+<href>/ninja/wrfSim/temperature_kml/layer.4.png</href>
+<viewBoundScale>0.75</viewBoundScale>
+</Icon>
+<LatLonBox>
+<north>47.63107</north>
+<south>46.90489</south>
+<east>-112.97979</east>
+<west>-113.99359</west>
+</LatLonBox>
+</GroundOverlay>
+</kml>

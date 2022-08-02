@@ -1,0 +1,24 @@
+This directory holds data coming from diablo
+
+most importantly is the wrfSim/ directory
+
+In wrfSim/ are all the files kml files that are displayed under
+weather.firelab.org/wrf.html
+
+Becuase we aren't really using it at this point, I have disabled updating 
+
+wrfSim/ninjaout/ which used to hold all the raw kmz files for users who 
+
+wanted them.
+
+To re-enable this, go to diablo and under the tfinney crontab
+
+locate the cronjob with comment RAW Ninja Out files
+
+re enable this, and all the raw kmzs will get copied over again
+
+Also disabled are the raw temperature grids, this was done once again to conserve space
+
+on breezy
+
+to re-enable this go to the diable crontab and enable the cronjob with comment RAW Temperature grids

@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "leaflet.ajax",
+      "/home/tanner"
+    ]
+  ],
+  "_from": "leaflet.ajax@latest",
+  "_id": "leaflet.ajax@1.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/leaflet.ajax",
+  "_npmUser": {
+    "email": "calvin.metcalf@gmail.com",
+    "name": "cwmma"
+  },
+  "_npmVersion": "1.3.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "leaflet.ajax",
+    "raw": "leaflet.ajax",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/leaflet.ajax/-/leaflet.ajax-1.1.0.tgz",
+  "_shasum": "ae871eae44821045ae6ce9fae32f05d38c2201dc",
+  "_shrinkwrap": null,
+  "_spec": "leaflet.ajax",
+  "_where": "/home/tanner",
+  "author": {
+    "name": "Calvin Metcalf"
+  },
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/leaflet-ajax/issues"
+  },
+  "dependencies": {},
+  "deprecated": "use leaflet-ajax",
+  "description": "AJAX and JSONP in Leaflet",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-uglify": "~0.2.4"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "dist": {
+    "shasum": "ae871eae44821045ae6ce9fae32f05d38c2201dc",
+    "tarball": "https://registry.npmjs.org/leaflet.ajax/-/leaflet.ajax-1.1.0.tgz"
+  },
+  "homepage": "https://github.com/calvinmetcalf/leaflet-ajax#readme",
+  "keywords": [
+    "ajax",
+    "geojson",
+    "leaflet"
+  ],
+  "license": "MIT",
+  "main": "dist/leaflet.ajax.js",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    }
+  ],
+  "name": "leaflet.ajax",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/calvinmetcalf/leaflet-ajax.git"
+  },
+  "version": "1.1.0"
+}
