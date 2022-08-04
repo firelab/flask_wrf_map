@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="ui header" name="Coordinates" value="Coordinates" style="color:#374785">
+      <i class="file alternate icon"></i>
+      <div class="content">
+        Edit WRF inputs
+      </div>
+
+    </h1>
+    <h2>Select file(s) to upload</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </p>
+    <form method="post" action="/submit" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <label>KML Files</label>
+                <input type="file" name="kml[]" multiple="true" autocomplete="off" required>
+            </p>
+            <p>
+                <label>BMP Files</label>
+                <input type="file" name="bmp[]" multiple="true" autocomplete="off" required>
+            </p>
+            <p>
+                <label>Log Files</label>
+                <input type="file" name="log[]" multiple="true" autocomplete="off" required>
+            </p>
+            <p>
+                <label>Downloadable Files</label>
+                <input type="file" name="zip[]" multiple="true" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    <br>
+    <br>
+    <form action="/fire_name" method = "POST" enctype="multipart/form-data">
+        <label>New Fire Name</label>
+        <input type="text" name="new_name" placeholder = {{fire_name}}>
+        <input type="submit" value="Submit">
+    </form>
+    {% endblock %}
