@@ -1,6 +1,6 @@
-import os
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
+import pandas as pd
 
 app=Flask(__name__)
 
@@ -10,9 +10,12 @@ global fire_name
 @app.route('/')
 def WRF():
     global fire_name
-    lat = [45.17, 46.87]
-    lon = [-113.89, -113.99]
-    return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat))
+    df = pd.read_feather('./raws.ftr')
+    name = df['Name'].to_numpy()
+    lat = df['Latitude'].to_numpy()
+    lon = df['Longitude'].to_numpy()
+
+    return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat), name = name)
 
 
 @app.route('/edit')
@@ -68,3 +71,7 @@ def fire_name():
     fire_name = request.form['new_name']
     print(fire_name)
     return redirect('/edit')
+
+#This specifies a certain port I would like the app to run on
+if __name__ == '__main__':
+     app.run(host='0.0.0.0', port ='5000')

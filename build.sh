@@ -1,0 +1,1 @@
+docker build --tag flask_fire_danger .
