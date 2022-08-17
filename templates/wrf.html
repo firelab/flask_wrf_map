@@ -196,6 +196,7 @@
 		var wrf9 = new L.KML("../static/ninja/wrfSim/wrf/wrf_2000.kml", {async: true});
 		var wrf10 = new L.KML("../static/ninja/wrfSim/wrf/wrf_2100.kml", {async: true});
 
+
 		//var wrf1_2= new L.KML("../static/ninja/wrfSim/wrf/wrf2_1200.kml", {async: true});
 		//var wrf2_2 = new L.KML("../static/ninja/wrfSim/wrf/wrf2_1300.kml", {async: true});
 		//var wrf3_2 = new L.KML("../static/ninja/wrfSim/wrf/wrf2_1400.kml", {async: true});
@@ -218,6 +219,14 @@
     map.addLayer(wrf1);
 
     map.addLayer(osm);
+
+	//Works just need to do api pull and formate in python
+	{%for i in range(len):%}
+
+		var example= new L.marker([{{lat[i]}}, {{lon[i]}}]).addTo(map);
+
+    {%endfor%}
+
 
 		function toggleLayer(layer){
 			if (map.hasLayer(layer)==true){
@@ -311,7 +320,7 @@
                         <!-- </><b>Additional Layers</b><br /> -->
 			<!-- <input type=checkbox checked=checked id="layer0" onclick=toggleLayer(lolo) />Lolo Peak Fire Perimeter<br /> -->
                         <!-- <input type=checkbox id="layer0" onclick=toggleLayer(raws) />RAWS Weather<br /> -->
-			</><b>{{fire_name}}</b><br />
+			<b>{{fire_name}}</b><br />
 			<input type=checkbox checked=checked id="layer0" onclick=toggle("gallery") />Wind Legend<br />
 			<input type=checkbox checked=checked id="layer0" onclick=toggleLayer(wrf1) />10m Wind 1200<br />
 			<input type=checkbox id="layer0" onclick=toggleLayer(wrf2) />10m Wind 1300<br />

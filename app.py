@@ -10,7 +10,9 @@ global fire_name
 @app.route('/')
 def WRF():
     global fire_name
-    return render_template('wrf.html', fire_name=fire_name)
+    lat = [45.17, 46.87]
+    lon = [-113.89, -113.99]
+    return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat))
 
 
 @app.route('/edit')
