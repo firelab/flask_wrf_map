@@ -18,7 +18,7 @@ while 1:
     except:
         print("Couldn't grab live data at "+ str(datetime.now()))
 
-    dt = datetime.now() + timedelta(hours=1)
+    dt = datetime.now() + timedelta(hours=24)
     dt = dt.replace(minute=00)
     
     while datetime.now() < dt:
