@@ -7,6 +7,9 @@ app=Flask(__name__)
 app.secret_key = "secret key"
 global fire_name
 
+# This route and function open the wrf.html file and insert the fire_name as well 
+# as lists of the RAWS stations names, lat and lon to be looped through and placed
+# in the wrf javascript
 @app.route('/')
 def WRF():
     global fire_name
@@ -17,11 +20,15 @@ def WRF():
 
     return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat), name = name)
 
-
+# This route takes us to the edit page 
 @app.route('/edit')
 def edit():
     return render_template('edit.html')
 
+# This route submits our kml, bmp, log, and download files that need to be changed
+# The function does this by taking in multiple files at a time and placing them in lists 
+# The lists are then looped throuh for the files, thoise files are then saved and placed 
+# In the correct directory 
 @app.route('/submit', methods = ['POST'])
 def submit():
     if request.method == 'POST':
@@ -65,6 +72,8 @@ def submit():
         flash('File(s) successfully uploaded')
         return redirect('/edit')
 
+# This route submits the new fire name for change 
+# and then changes the global fire name to the new name
 @app.route('/fire_name', methods = ['POST'])
 def fire_name():
     global fire_name
