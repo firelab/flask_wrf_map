@@ -223,7 +223,7 @@
 	//Works just need to do api pull and formate in python
 	{%for i in range(len):%}
 
-		var example= new L.marker([{{lat[i]}}, {{lon[i]}}]).addTo(map);
+		var example= new L.marker([{{lat[i]}}, {{lon[i]}}]).addTo(map).bindPopup("<b>{{name[i]}}</b><br>Lat = {{lat[i]}}<br>Lon = {{lon[i]}}");
 
     {%endfor%}
 
