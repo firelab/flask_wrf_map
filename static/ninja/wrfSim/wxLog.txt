@@ -1,3 +1,3 @@
 High-Resolution WRF
 All timesteps are in local time.
-Simulation valid for: 2022-08-04.
+Simulation valid for: 2022-08-29.

@@ -17,8 +17,17 @@ def WRF():
     name = df['Name'].to_numpy()
     lat = df['Latitude'].to_numpy()
     lon = df['Longitude'].to_numpy()
+    temp = df['Temperature'].to_numpy()
+    dew = df['Dew_Point_Temp'].to_numpy()
+    humid = df['Relative_Humidity'].to_numpy()
+    wind_speed = df['Wind_Speed'].to_numpy()
+    wind_gust = df['Wind_Gust'].to_numpy()
+    pressure = df['Pressure'].to_numpy()
+    heat = df['Heat_Index'].to_numpy()
+    fuel_temp = df['Fuel_Temp'].to_numpy()
+    fuel_moist = df['Fuel_Moisture'].to_numpy()
 
-    return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat), name = name)
+    return render_template('wrf.html', fire_name=fire_name, lat=lat, lon=lon, len = len(lat), name = name, temp = temp, dew = dew, humid = humid, wind_speed = wind_speed, wind_gust = wind_gust, pressure = pressure, heat = heat, fuel_temp = fuel_temp, fuel_moist = fuel_moist)
 
 # This route takes us to the edit page 
 @app.route('/edit')
